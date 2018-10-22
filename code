@@ -1,0 +1,88 @@
+x = 0
+y = 0
+tan_orange = color(238, 126, 45)
+dark_orange = color(238, 94, 45)
+light_yellow = color(238, 188, 45)
+yellow = color(238, 223, 45)
+blue = color(35, 198, 179)
+blue_yellow = blendColor(yellow, blue, BLEND)
+
+def setup():
+    size(640, 480)
+    
+def draw():
+    global x
+    global y
+    noCursor()
+    if x >= 700:
+        x = 0
+    x += 1
+    if y >= 700:
+        y = 0
+    y += .5
+    background(246, 221, 82)
+
+# Sky
+    fill(light_yellow)
+    rect(0,100,640,480)
+    fill(tan_orange)
+    rect(0,170,640,480)
+    fill(dark_orange)
+    rect(0,250,640,480)
+
+# Sun
+    fill(231, 225, 32)
+    ellipse(340,270,250,250)
+    
+# BackCloud1
+    noStroke()
+    fill(206, 181, 149)
+    ellipse(y-5,0,100,70)
+    ellipse(y,15,70,80)
+    ellipse(y+160,0,100,70)
+    ellipse(y+150,15,80,80)
+    ellipse(y+140,10,70,70)    
+    ellipse(y+250,4,70,80)
+    ellipse(y+190,20,90,80)
+    ellipse(y+200,0,60,60)
+    ellipse(y+110,25,50,50)
+# TopCloud1
+    fill(245, 230, 211)
+    ellipse(y+1,0,100,70)
+    ellipse(y+25,15,80,80)
+    ellipse(y+50,10,70,70)    
+    ellipse(y+60,4,70,80)
+    ellipse(y+77,20,90,80)
+    ellipse(y+130,0,60,60)
+# BackCloud2
+    fill(206, 181, 149)
+    ellipse(y+260,0,100,70)
+    ellipse(y+250,15,80,80)
+    ellipse(y+240,10,70,70)    
+    ellipse(y+350,4,70,80)
+    ellipse(y+290,20,90,80)
+    ellipse(y+300,0,60,60)
+# TopCloud2
+    fill(245, 230, 211)
+    ellipse(y+201,0,100,70)
+    ellipse(y+225,15,80,80)
+    ellipse(y+250,10,70,70)    
+    ellipse(y+260,4,70,80)
+    ellipse(y+277,20,90,80)
+    ellipse(y+330,0,60,60)
+    ellipse(y+340,0,80,70)
+    
+# FrontCloud1
+    fill(244, 245, 220)
+    ellipse(x, 120, 80,60)
+    ellipse(x+12, 105, 60,60)
+    ellipse(x+12+15, 120, 60,70)
+    ellipse(x, 100, 80,60)
+    ellipse(x+12, 98, 60,40)
+    ellipse(x+12+15, 110, 70,60)
+       
+# Water
+    fill(blue_yellow)
+    rect(0,290,640,480)
+    fill(14, 38, 129)
+    rect(0,300,640,480)
